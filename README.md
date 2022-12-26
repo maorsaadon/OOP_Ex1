@@ -5,16 +5,16 @@ o We will add an option to organize a group of recipients of updates on the stat
 UndoableStringBuilder and send all updates to it in real time.
 o We will add tracking of the size of the Heap object.
 
-##The Main Classes
+## The Main Classes
 
 The classes we have been asked to create are:
 1.AdminGroup
 2.ConcreteMember
 
-###AdminGroup
+### AdminGroup
 
 
-###ConcreteMember
+### ConcreteMember
 
 
 
