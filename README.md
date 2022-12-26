@@ -7,8 +7,8 @@ o We will add tracking of the size of the Heap object.
 
 ## The Main Classes
 
-The classes we have been asked to create are:
-1.AdminGroup
+The classes we have been asked to create are:\n
+1.AdminGroup\n
 2.ConcreteMember
 
 ### AdminGroup
