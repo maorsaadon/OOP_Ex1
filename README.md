@@ -13,6 +13,9 @@ The classes we have been asked to create are:
 
 ### AdminGroup
 
+This class is the Observe in this design template.
+
+
 
 ### ConcreteMember
 
