@@ -13,14 +13,40 @@ We will add tracking of the size of the Heap object.
 
 ### 1.Sender 
 
+
 This interface describes the Observerable (update sender).
 This interface hold the function that the GroupAdmin actualize.
 
+#### Declaration
+
+```java
+//methods to register and unregister observers
+void register(Member obj);
+void unregister(Member obj) throws Exception;
+
+//Inserts the string into this character sequence.
+void insert(int offset, String obj);
+
+// Appends the specified string to this character sequence.
+void append(String obj);
+
+// Removes the characters in a substring of this sequence.
+void delete(int start, int end);
+
+// Erases the last change done to the document, reverting it to an older state. 
+void undo();
+```
 
 ### 2.Member
 
 This interface describes the Observer (update reciever).
 This interface hold the function that ConcreteMember actualize.
+
+#### Declaration
+
+```java
+public void update(UndoableStringBuilder usb);
+```
 
 ## The Main Classes
  
@@ -37,9 +63,9 @@ This UndoableStringBuilder class take a StringBuilder and give us the perv word 
 
 ### 2.GroupAdmin 
 
-This class is the Observe in this design template.    
-This class actualize the functions of the Sender, and we also add function that notify the observers.  
-GroupAdmin contains the state pool (UdoableStringBuilder) and also contains an HashSet that holds all customers who should receive updates on any changes made to the state pool.  
+This class is the Observerbale in this design template.    
+This class actualize the functions of the Sender, and we also have function that notify the observers.  
+GroupAdmin contains the state pool (UdoableStringBuilder) and also contains an HashSet that holds all customers who should receive updates on any changes made to the state pool, the class has a constructor that builds a GroupAdmin from UdoableStringBuilder and HashSet<Member>.
 In every function we call notify() in order to update all the member about every change that has been made to the UndoableStringBuilder.  
 
 ```java  
@@ -73,20 +99,20 @@ GroupAdmin.undo();
 
 ### 3.ConcreteMember
 
+This class is the Observer in this design template.    
+This class actualize the functions of the Member, and we also have function to getData().  
+ConcreteMember contains String that update every time the GroupAdmin notify about a change.
 
 #### Usage
 
 ```java
 import observer.ConcreteMember;
 
-# returns 'words'
-foobar.pluralize('word')
+//Update the String that ConcreteMember hold according to change of the UndoableStringBuilder of the GroupAdmin
+ConcreteMember.update(UndoableStringBuilder);
 
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-
+//Return the String that ConcreteMember hold
+ConcreteMember.getData();
+```
 
 
