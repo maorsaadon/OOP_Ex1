@@ -43,6 +43,7 @@ In every function we call notify() in order to update all the member about every
 
 ```java  
 notify(HashSet<Member>);
+```
 
 ####Usage
 
@@ -66,6 +67,7 @@ GroupAdmin.delete(int, int);
 
 //Performs a return to the previous state.  
 GroupAdmin.undo();
+```
 
 
 ### 3.ConcreteMember
