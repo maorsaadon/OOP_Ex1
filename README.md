@@ -19,6 +19,8 @@ This interface hold the function that the GroupAdmin actualize.
 #### Declaration
 
 ```java
+import observer.Sender;  
+
 //methods to register and unregister observers
 void register(Member obj);
 void unregister(Member obj) throws Exception;
@@ -44,6 +46,8 @@ This interface hold the function that ConcreteMember actualize.
 #### Declaration
 
 ```java
+import observer.Member;
+
 public void update(UndoableStringBuilder usb);
 ```
 
