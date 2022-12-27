@@ -38,7 +38,7 @@ public class ConcreteMember implements Member {
      * <p>
      * Get the data of the member.<br>
      * </p>
-     * @return {@code String} that ConcreteMember hold
+     * @return {@code String} that ConcreteMember hold.
      */
     public String getData() {
         return str;
