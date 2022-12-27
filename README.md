@@ -36,16 +36,15 @@ This UndoableStringBuilder class take a StringBuilder and give us the perv word 
 ### 2.GroupAdmin 
 
 This class is the Observe in this design template.    
-This class actualize the functions of the Sender, and we also add function that notify the observers.
-GroupAdmin contains the state pool (UdoableStringBuilder) and also contains an HashSet that holds all  
-customers who should receive updates on any changes made to the state pool.
-In every function we call notify() in order to update all the member about every change that has been made to the UndoableStringBuilder.
+This class actualize the functions of the Sender, and we also add function that notify the observers.  
+GroupAdmin contains the state pool (UdoableStringBuilder) and also contains an HashSet that holds all customers who should receive updates on any changes made to the state pool.  
+In every function we call notify() in order to update all the member about every change that has been made to the UndoableStringBuilder.  
 
 ```java  
 notify(HashSet<Member>);
 ```
 
-####Usage
+#### Usage
 
 ```java  
 import observer.GroupAdmin;  
