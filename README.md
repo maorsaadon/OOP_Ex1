@@ -13,7 +13,6 @@ We will add tracking of the size of the Heap object.
 
 ### 1.Sender 
 
-
 This interface describes the Observerable (update sender).
 This interface hold the function that the GroupAdmin actualize.
 
@@ -101,7 +100,7 @@ GroupAdmin.undo();
 
 This class is the Observer in this design template.    
 This class actualize the functions of the Member, and we also have function to getData().  
-ConcreteMember contains String that update every time the GroupAdmin notify about a change.
+ConcreteMember contains String that update every time the GroupAdmin notify about a change in other word its a copy (copy sallow) of the UndoableStringBuilder
 
 #### Usage
 
