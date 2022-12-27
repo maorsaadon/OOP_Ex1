@@ -1,4 +1,4 @@
-# OOP_Ex2
+# Observer
 In this assignment we will add some more functionality to the UndoableStringBuilder
 which we built in a previous assignment:  
 We will add an option to organize a group of recipients of updates on the status of
