@@ -1,6 +1,8 @@
 # Observer
+
+The observer pattern is a software design pattern in which an object, named the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.    
 In this assignment we will add some more functionality to the UndoableStringBuilder
-which we built in a previous assignment:  
+which we built in a previous assignment.  
 We will add an option to organize a group of recipients of updates on the status of
 UndoableStringBuilder and send all updates to it in real time.  
 We will add tracking of the size of the Heap object.  
@@ -72,7 +74,7 @@ GroupAdmin.undo();
 ### 3.ConcreteMember
 
 
-####Usage
+#### Usage
 
 ```java
 import observer.ConcreteMember;
