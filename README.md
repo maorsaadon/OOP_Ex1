@@ -67,8 +67,8 @@ This UndoableStringBuilder class take a StringBuilder and give us the perv word 
 ### 2.GroupAdmin 
 
 This class is the Observerbale in this design template.    
-This class actualize the functions of the Sender, and we also have function that notify the observers.  
-GroupAdmin contains the state pool (UdoableStringBuilder) and also contains an HashSet that holds all customers who should receive updates on any changes made to the state pool, the class has a constructor that builds a GroupAdmin from UdoableStringBuilder and HashSet<Member>.
+This class actualize the functions of the Sender, and we also have function that notify the observers and function to return the size of the member..  
+GroupAdmin contains the state pool (UdoableStringBuilder) and also contains an HashSet that holds all customers who should receive updates on any changes made to the state pool and also an int counter to save how many member we have, the class has a constructor that builds a GroupAdmin from UdoableStringBuilder and HashSet<Member>.
 In every function we call notify() in order to update all the member about every change that has been made to the UndoableStringBuilder.  
 
 ```java  
@@ -97,6 +97,9 @@ GroupAdmin.delete(int, int);
 
 //Performs a return to the previous state.  
 GroupAdmin.undo();
+
+//Return the number of the members
+GroupAdmin.getSizeMember();
 ```
 
 
