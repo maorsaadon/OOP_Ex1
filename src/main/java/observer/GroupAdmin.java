@@ -15,6 +15,8 @@ public class GroupAdmin implements Sender{
     public HashSet<Member> members;
     public UndoableStringBuilder usb;
 
+    public int counter;
+
     /**
      * <p>
      * The constructor take the objects and make new object (empty).<br>
@@ -38,6 +40,7 @@ public class GroupAdmin implements Sender{
         }
         else {
             members.add(obj);
+            counter++;
             System.out.println("The member has been register...");
         }
 
@@ -53,6 +56,7 @@ public class GroupAdmin implements Sender{
     public void unregister(Member obj) {
             if(members.contains(obj)){
                 members.remove(obj);
+                counter--;
                 System.out.println("The Member has been removed from this GroupAdmin...");
             }
             else System.err.println("The Member is not in this GroupAdmin");
@@ -82,7 +86,6 @@ public class GroupAdmin implements Sender{
     public void append(String obj) {
         usb.append(obj);
         notifyMember();
-
     }
 
     /**
@@ -120,7 +123,10 @@ public class GroupAdmin implements Sender{
         for (Member member : members) {
             member.update(usb);
         }
-        System.out.println("All members have been updated");
+    }
+
+    public int getSizeMember(){
+        return counter;
     }
 
 }

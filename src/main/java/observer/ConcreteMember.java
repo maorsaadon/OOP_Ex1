@@ -43,6 +43,7 @@ public class ConcreteMember implements Member {
     public String getData() {
         return str;
     }
+
 }
 
 
