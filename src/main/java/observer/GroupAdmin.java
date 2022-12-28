@@ -41,6 +41,7 @@ public class GroupAdmin implements Sender{
         else {
             members.add(obj);
             counter++;
+            notifyMember();
             System.out.println("The member has been register...");
         }
 
