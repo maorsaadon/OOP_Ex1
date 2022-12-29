@@ -123,10 +123,10 @@ ConcreteMember.getData();
 ##Download & run the program
 
 In order to run this project follow this steps:
-  1.Download the zip project.
-  2.Extract it.
+  1.Download zip from our reposetory : push on code -> Download zip.
+  2.Extract all on yor computer.
   3.Open a new java project.
-  4.Write the file path.
+  4.Open the file in your java's workspace.
   5.Press on pom.xml 
-  6.press ok.
-  7.Open as projecta and run the file successfully.
+  6.Press ok.
+  7.Run the project.
