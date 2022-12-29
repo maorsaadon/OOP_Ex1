@@ -14,7 +14,6 @@ import java.util.HashSet;
 public class GroupAdmin implements Sender{
     public HashSet<Member> members;
     public UndoableStringBuilder usb;
-
     public int counter;
 
     /**

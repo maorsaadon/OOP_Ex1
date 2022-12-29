@@ -15,25 +15,11 @@ public class Tests {
     ConcreteMember m2 = new ConcreteMember();
 
     @Test
-    public void memoryTrace(){
-        logger.info(()->JvmUtilities.memoryStats(ga));
-        logger.info(()->JvmUtilities.memoryStats(m1));
-        logger.info(()->JvmUtilities.memoryStats(m2));
-        logger.info(() -> JvmUtilities.jvmInfo());
-    }
-
-    @Test
     void register(){
         ga.register(m1);
         ga.register(m1);
         assertEquals(1 , ga.getSizeMember());
-    }
-    @Test
-    public void memoryTrace1(){
-        logger.info(()->JvmUtilities.memoryStats(ga));
-        logger.info(()->JvmUtilities.memoryStats(m1));
-        logger.info(()->JvmUtilities.memoryStats(m2));
-        logger.info(() -> JvmUtilities.jvmInfo());
+
     }
     @Test
     void unregister(){
@@ -41,13 +27,6 @@ public class Tests {
         ga.register(m2);
         ga.unregister(m2);
         assertEquals(1 , ga.getSizeMember());
-    }
-    @Test
-    public void memoryTrace2(){
-        logger.info(()->JvmUtilities.memoryStats(ga));
-        logger.info(()->JvmUtilities.memoryStats(m1));
-        logger.info(()->JvmUtilities.memoryStats(m2));
-        logger.info(() -> JvmUtilities.jvmInfo());
     }
 
     @Test
@@ -57,25 +36,11 @@ public class Tests {
         assertEquals("hello world", m1.getData());
     }
     @Test
-    public void memoryTrace3(){
-        logger.info(()->JvmUtilities.memoryStats(ga));
-        logger.info(()->JvmUtilities.memoryStats(m1));
-        logger.info(()->JvmUtilities.memoryStats(m2));
-        logger.info(() -> JvmUtilities.jvmInfo());
-    }
-    @Test
     void insert(){
         ga.register(m1);
         ga.append("hello world");
         ga.insert(5," my beautiful");
         assertEquals("hello my beautiful world", m1.getData());
-    }
-    @Test
-    public void memoryTrace4(){
-        logger.info(()->JvmUtilities.memoryStats(ga));
-        logger.info(()->JvmUtilities.memoryStats(m1));
-        logger.info(()->JvmUtilities.memoryStats(m2));
-        logger.info(() -> JvmUtilities.jvmInfo());
     }
     @Test
     void delete(){
@@ -86,15 +51,9 @@ public class Tests {
         assertEquals("hello beautiful world", m1.getData());
     }
     @Test
-    public void memoryTrace5(){
-        logger.info(()->JvmUtilities.memoryStats(ga));
-        logger.info(()->JvmUtilities.memoryStats(m1));
-        logger.info(()->JvmUtilities.memoryStats(m2));
-        logger.info(() -> JvmUtilities.jvmInfo());
-    }
-    @Test
     void undo(){
         ga.register(m1);
+        ga.register(m2);
         ga.append("hello world");
         ga.insert(5," my beautiful");
         ga.delete(5,7);
@@ -102,11 +61,22 @@ public class Tests {
         assertEquals("hello my beautiful world", m1.getData());
     }
     @Test
-    public void memoryTrace6(){
-        logger.info(()->JvmUtilities.memoryStats(ga));
-        logger.info(()->JvmUtilities.memoryStats(m1));
-        logger.info(()->JvmUtilities.memoryStats(m2));
+    void memoryTrace(){
+        logger.info(() -> JvmUtilities.memoryStats(ga));
+        logger.info(() -> JvmUtilities.memoryStats(m1));
+        logger.info(() -> JvmUtilities.memoryStats(m2));
+        logger.info(() -> JvmUtilities.jvmInfo());
+
+        ga.register(m1);
+        ga.register(m2);
+        ga.append("hello world");
+        ga.insert(5," my beautiful");
+        ga.delete(5,7);
+        ga.undo();
+
+        logger.info(() -> JvmUtilities.memoryStats(ga));
+        logger.info(() -> JvmUtilities.memoryStats(m1));
+        logger.info(() -> JvmUtilities.memoryStats(m2));
         logger.info(() -> JvmUtilities.jvmInfo());
     }
-
 }
