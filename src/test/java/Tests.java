@@ -60,12 +60,15 @@ public class Tests {
         ga.undo();
         assertEquals("hello my beautiful world", m1.getData());
     }
+
+    //Here we check the memory trace when we do actions on ga, m1, m2
+    //we can see that the memory change
     @Test
     void memoryTrace(){
+        logger.info(() -> JvmUtilities.jvmInfo());
         logger.info(() -> JvmUtilities.memoryStats(ga));
         logger.info(() -> JvmUtilities.memoryStats(m1));
         logger.info(() -> JvmUtilities.memoryStats(m2));
-        logger.info(() -> JvmUtilities.jvmInfo());
 
         ga.register(m1);
         ga.register(m2);
@@ -77,6 +80,5 @@ public class Tests {
         logger.info(() -> JvmUtilities.memoryStats(ga));
         logger.info(() -> JvmUtilities.memoryStats(m1));
         logger.info(() -> JvmUtilities.memoryStats(m2));
-        logger.info(() -> JvmUtilities.jvmInfo());
     }
 }
