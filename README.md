@@ -120,5 +120,13 @@ ConcreteMember.update(UndoableStringBuilder);
 //Return the String that ConcreteMember hold
 ConcreteMember.getData();
 ```
+##Download & run the program
 
-
+In order to run this project follow this steps:
+  1.Download the zip project.
+  2.Extract it.
+  3.Open a new java project.
+  4.Write the file path.
+  5.Press on pom.xml 
+  6.press ok.
+  7.Open as projecta and run the file successfully.
