@@ -18,7 +18,7 @@ public class ConcreteMember implements Member {
      */
     public ConcreteMember() {
         this.usb = new UndoableStringBuilder();
-        usb.append("string: ");
+        usb.append("Unregister");
     }
 
     /**
