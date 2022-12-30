@@ -9,7 +9,7 @@ package observer;
  * @author Matan & Maor
  */
 public class ConcreteMember implements Member {
-    public UndoableStringBuilder usb;
+    public UndoableStringBuilder usb ;
 
     /**
      * <p>
@@ -17,7 +17,8 @@ public class ConcreteMember implements Member {
      * </p>
      */
     public ConcreteMember() {
-        this.usb = null;
+        this.usb = new UndoableStringBuilder();
+        usb.append("string: ");
     }
 
     /**

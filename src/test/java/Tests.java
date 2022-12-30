@@ -39,7 +39,7 @@ public class Tests {
     }
 
     //in the next 4 tests we check that when the member is unregistered he didn't get the updated data
-    //and when he registered he gets the updated date (in the context of all actions)ץ
+    //and when he registered he gets the updated date (in the context of all actions)
     @Test
     void append(){
         ga.append("hello world");
