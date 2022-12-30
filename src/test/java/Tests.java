@@ -5,6 +5,7 @@ import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class Tests {
     public static final Logger logger = LoggerFactory.getLogger(Tests.class);
@@ -14,6 +15,7 @@ public class Tests {
     ConcreteMember m1 = new ConcreteMember();
     ConcreteMember m2 = new ConcreteMember();
 
+    //here we check that when a member register twice it's still register him once
     @Test
     void register(){
         ga.register(m1);
@@ -21,43 +23,57 @@ public class Tests {
         assertEquals(1 , ga.getSizeMember());
 
     }
+
+    //here we check that when we unregister member twice it's not affect the size of the GroupAdmin
     @Test
     void unregister(){
+        assertEquals(0, ga.getSizeMember());
         ga.register(m1);
         ga.register(m2);
         ga.unregister(m2);
         assertEquals(1 , ga.getSizeMember());
+
+        ga.unregister(m2);
+        assertEquals(1 , ga.getSizeMember());
+
     }
 
+    //in the next 4 tests we check that when the member is unregistered he didn't get the updated data
+    //and when he registered he gets the updated date (in the context of all actions)ץ
     @Test
     void append(){
-        ga.register(m1);
         ga.append("hello world");
+        assertNotEquals("hello world", m1.getData());
+
+        ga.register(m1);
         assertEquals("hello world", m1.getData());
     }
     @Test
     void insert(){
-        ga.register(m1);
         ga.append("hello world");
         ga.insert(5," my beautiful");
+        assertNotEquals("hello my beautiful world", m1.getData());
+
+        ga.register(m1);
         assertEquals("hello my beautiful world", m1.getData());
     }
     @Test
     void delete(){
-        ga.register(m1);
-        ga.append("hello world");
-        ga.insert(5," my beautiful");
+        ga.append("hello my beautiful world");
         ga.delete(5,8);
+        assertNotEquals("hello beautiful world", m1.getData());
+
+        ga.register(m1);
         assertEquals("hello beautiful world", m1.getData());
     }
     @Test
     void undo(){
-        ga.register(m1);
-        ga.register(m2);
-        ga.append("hello world");
-        ga.insert(5," my beautiful");
+        ga.append("hello my beautiful world");
         ga.delete(5,7);
         ga.undo();
+        assertNotEquals("hello my beautiful world", m1.getData());
+
+        ga.register(m1);
         assertEquals("hello my beautiful world", m1.getData());
     }
 

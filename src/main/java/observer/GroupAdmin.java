@@ -3,8 +3,7 @@ import java.util.HashSet;
 
 /**
  * <p>
- * This class is the Observerbale in this design template.<br>
- * This class actualize the functions of the Sender, and we also have function that notify the observers.<br>
+ * This class actualize the functions of the Sender that describe the Observerbale, and we also have function that notify the observers.<br>
  * GroupAdmin contains the state pool (UndoableStringBuilder) and also contains an HashSet that holds all
  * customers who should receive updates on any changes made to the state pool, the class has a constructor
  * that builds a GroupAdmin from UndoableStringBuilder and HashSet<Member>.<br>
@@ -14,7 +13,6 @@ import java.util.HashSet;
 public class GroupAdmin implements Sender{
     public HashSet<Member> members;
     public UndoableStringBuilder usb;
-    public int counter;
 
     /**
      * <p>
@@ -39,8 +37,7 @@ public class GroupAdmin implements Sender{
         }
         else {
             members.add(obj);
-            counter++;
-            notifyMember();
+            obj.update(usb);
             System.out.println("The member has been register...");
         }
 
@@ -56,7 +53,6 @@ public class GroupAdmin implements Sender{
     public void unregister(Member obj) {
             if(members.contains(obj)){
                 members.remove(obj);
-                counter--;
                 System.out.println("The Member has been removed from this GroupAdmin...");
             }
             else System.err.println("The Member is not in this GroupAdmin");
@@ -125,8 +121,11 @@ public class GroupAdmin implements Sender{
         }
     }
 
+    /**
+     * @return how many members the AdminGroup have
+     */
     public int getSizeMember(){
-        return counter;
+        return members.size();
     }
 
 }
