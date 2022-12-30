@@ -65,10 +65,9 @@ The idea of this class is to give us the latest thing that the object had.
 This UndoableStringBuilder class take a StringBuilder and give us the perv word or sentence that this StringBuilder had with using stack.  
 
 ### 2.GroupAdmin 
-
-This class is the Observerbale in this design template.    
-This class actualize the functions of the Sender, and we also have function that notify the observers and function to return the size of the member..  
-GroupAdmin contains the state pool (UdoableStringBuilder) and also contains an HashSet that holds all customers who should receive updates on any changes made to the state pool and also an int counter to save how many member we have, the class has a constructor that builds a GroupAdmin from UdoableStringBuilder and HashSet<Member>.
+   
+This class actualize the functions of the Sender that describe the Observerbale, and we also have function that notify the observers and function to return the size of the member.  
+GroupAdmin contains the state pool (UdoableStringBuilder) and also contains an HashSet that holds all customers who should receive updates on any changes made to the state pool , the class has a constructor that builds a GroupAdmin from UdoableStringBuilder and HashSet<Member>.
 In every function we call notify() in order to update all the member about every change that has been made to the UndoableStringBuilder.  
 
 ```java  
@@ -104,9 +103,8 @@ GroupAdmin.getSizeMember();
 
 
 ### 3.ConcreteMember
-
-This class is the Observer in this design template.    
-This class actualize the functions of the Member, and we also have function to getData().  
+   
+This class actualize the functions of the Member that describe the Observer, and we also have function to getData().  
 ConcreteMember contains String that update every time the GroupAdmin notify about a change in other word its a copy (copy sallow) of the UndoableStringBuilder
 
 #### Usage
