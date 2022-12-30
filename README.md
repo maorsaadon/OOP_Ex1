@@ -1,11 +1,11 @@
 # Observer
 
 The observer pattern is a software design pattern in which an object, named the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.    
-In this assignment we will add some more functionality to the UndoableStringBuilder
-which we built in a previous assignment.  
-We will add an option to organize a group of recipients of updates on the status of
-UndoableStringBuilder and send all updates to it in real time.  
-We will add tracking of the size of the Heap object.  
+In this program we will add some more functionality to the UndoableStringBuilder which based on StringBuilder with support for the undo().  
+We will add an option to organize a group of recipients of updates on the status of UndoableStringBuilder and send all updates to it in real time.  
+We will add tracking of the size of the Heap object in the Test class.
+
+In order for our run times to be efficient we used HashSet. HashSet is a collection that stores a set of elements. It is implemented using a hash table, which allows for fast insertion, deletion, and lookup of elements. HashSet does not allow duplicate elements, and it does not maintain the insertion order of the elements.
 
 ## The Main Interface  
 1.Sender      
@@ -120,5 +120,13 @@ ConcreteMember.update(UndoableStringBuilder);
 //Return the String that ConcreteMember hold
 ConcreteMember.getData();
 ```
+## Download & run the program
 
-
+In order to run this project follow this steps:  
+  1. Download zip from our reposetory : push on code -> Download zip.  
+  2. Extract all on yor computer.  
+  3. Open a new java project.  
+  4. Open the file in your java's workspace.  
+  5. Press on pom.xml.  
+  6. Press ok.  
+  7. Run the project.  
